@@ -14,6 +14,11 @@ compose-plugin = "1.6.11"
 junit = "4.13.2"
 kotlin = "2.0.0"
 ktor = "2.3.12"
+ktorfit = "1.0.0"
+coroutines = "1.5.2"
+serialization = "1.7.0"
+kodein = "7.21.1"
+firebaseDataconnect = "16.0.0-alpha04"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -27,6 +32,11 @@ androidx-material = { group = "com.google.android.material", name = "material", 
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktorfit-lib = { group = "de.jensklingenberg.ktorfit", name = "ktorfit-lib", version.ref = "ktorfit" }
+kotlin-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+kodein-conf = { module = "org.kodein.di:kodein-di-conf", version.ref = "kodein" }
+kodein-core = { module = "org.kodein.di:kodein-di", version.ref = "kodein" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

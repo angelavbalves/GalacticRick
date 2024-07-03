@@ -24,6 +24,8 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation("io.coil-kt:coil-compose:2.6.0")
+            implementation("org.kodein.di:kodein-di:$kodeinVersion")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -33,7 +35,6 @@ kotlin {
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
             implementation(projects.shared)
-            implementation("org.kodein.di:kodein-di:$kodeinVersion")
             implementation("de.jensklingenberg.ktorfit:ktorfit-lib:$ktorfitVersion")
             implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
             implementation("io.ktor:ktor-client-core:$ktorVersion")

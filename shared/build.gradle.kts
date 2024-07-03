@@ -1,10 +1,10 @@
-import org.jetbrains.kotlin.cli.jvm.main
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    kotlin("plugin.serialization") version "1.5.21"
     id("de.jensklingenberg.ktorfit") version "2.0.0"
 }
 
@@ -30,30 +30,26 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                // Adicione suas dependências comuns aqui
+                implementation(libs.kotlin.serialization.json)
+                implementation(libs.kotlin.coroutines.core)
+                implementation(libs.ktor.client.core)
+                implementation(libs.ktorfit.lib)
+                implementation(libs.kodein.core)
+                implementation("io.ktor:ktor-client-content-negotiation:2.3.12")
+                implementation("io.ktor:ktor-client-json:2.3.12")
+                implementation("io.ktor:ktor-client-logging:2.3.12")
+                implementation("org.kodein.di:kodein-di:7.3.1")
+
             }
         }
 
         val androidMain by getting {
             dependencies {
-                val voyagerVersion = "1.1.0-beta02"
-
-                // Multiplatform
-
-                // Navigator
-                implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
-
-                // Screen Model
-                implementation("cafe.adriel.voyager:voyager-screenmodel:$voyagerVersion")
-
-                // BottomSheetNavigator
-                implementation("cafe.adriel.voyager:voyager-bottom-sheet-navigator:$voyagerVersion")
-
-                // TabNavigator
-                implementation("cafe.adriel.voyager:voyager-tab-navigator:$voyagerVersion")
-
-                // Transitions
-                implementation("cafe.adriel.voyager:voyager-transitions:$voyagerVersion")
+                implementation("cafe.adriel.voyager:voyager-navigator:1.1.0-beta02")
+                implementation("cafe.adriel.voyager:voyager-screenmodel:1.1.0-beta02")
+                implementation("cafe.adriel.voyager:voyager-bottom-sheet-navigator:1.1.0-beta02")
+                implementation("cafe.adriel.voyager:voyager-tab-navigator:1.1.0-beta02")
+                implementation("cafe.adriel.voyager:voyager-transitions:1.1.0-beta02")
             }
         }
 
