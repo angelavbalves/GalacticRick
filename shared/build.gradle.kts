@@ -36,10 +36,12 @@ kotlin {
                 implementation(libs.ktorfit.lib)
                 implementation(libs.kodein.core)
                 implementation("io.ktor:ktor-client-content-negotiation:2.3.12")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.12")
                 implementation("io.ktor:ktor-client-json:2.3.12")
                 implementation("io.ktor:ktor-client-logging:2.3.12")
                 implementation("org.kodein.di:kodein-di:7.3.1")
-
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0-native-mt")
+                implementation("androidx.lifecycle:lifecycle-viewmodel:2.8.0-alpha03")
             }
         }
 
@@ -50,6 +52,9 @@ kotlin {
                 implementation("cafe.adriel.voyager:voyager-bottom-sheet-navigator:1.1.0-beta02")
                 implementation("cafe.adriel.voyager:voyager-tab-navigator:1.1.0-beta02")
                 implementation("cafe.adriel.voyager:voyager-transitions:1.1.0-beta02")
+                implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+                implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0")
+                implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
             }
         }
 
